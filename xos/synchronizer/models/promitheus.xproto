@@ -1,0 +1,12 @@
+option app_label = "promitheus";
+option name = "promitheus";
+
+message PromitheusService (Service){
+    option verbose_name = "Promitheus Service";
+    required string service_message = 1 [help_text = "Service Message to Display", max_length = 254, null = False, db_index = False, blank = False];
+}
+
+message PromitheusServiceInstance (TenantWithContainer){
+     option verbose_name = "Promitheus Service Instance";
+     required string tenant_message = 1 [help_text = "Tenant Message to Display", max_length = 254, null = False, db_index = False, blank = False];
+}
